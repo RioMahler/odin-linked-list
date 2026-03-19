@@ -92,6 +92,22 @@ function LinkedList() {
     return false;
   }
 
+  function findIndex(value) {
+    if (headNode == null) {
+      return -1;
+    }
+    let tmp = headNode;
+    let index = 0;
+    while (tmp != null) {
+      if (tmp.value == value) {
+        return index;
+      }
+      index++;
+      tmp = tmp.nextNode;
+    }
+    return -1;
+  }
+
   function toString() {
     let tmp = headNode;
     let string = "";
@@ -104,7 +120,18 @@ function LinkedList() {
     }
     return string;
   }
-  return { append, prepend, size, head, tail, at, pop, contains, toString };
+  return {
+    append,
+    prepend,
+    size,
+    head,
+    tail,
+    at,
+    pop,
+    contains,
+    findIndex,
+    toString,
+  };
 }
 
 class Node {
