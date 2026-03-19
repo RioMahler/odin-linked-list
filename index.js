@@ -1,6 +1,18 @@
 function LinkedList() {
   let headNode = null;
 
+  function append(value) {
+    if (headNode == null) {
+      headNode = new Node(value, null);
+    } else {
+      let tmp = headNode;
+      while (tmp.nextNode != null) {
+        tmp = tmp.nextNode;
+      }
+      tmp.nextNode = new Node(value, null);
+    }
+  }
+
   function prepend(value) {
     if (headNode != null) {
       headNode = new Node(value, headNode);
@@ -8,7 +20,7 @@ function LinkedList() {
       headNode = new Node(value, null);
     }
   }
-  return { prepend };
+  return { append, prepend };
 }
 
 class Node {
