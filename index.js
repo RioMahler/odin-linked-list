@@ -54,6 +54,20 @@ function LinkedList() {
     }
   }
 
+  function at(index) {
+    let tmp = headNode;
+    if (headNode == null) {
+      return undefined;
+    }
+    for (let i = 0; i < index; i++) {
+      tmp = tmp.nextNode;
+      if (tmp == null) {
+        return undefined;
+      }
+    }
+    return tmp.value;
+  }
+
   function toString() {
     let tmp = headNode;
     let string = "";
@@ -66,7 +80,7 @@ function LinkedList() {
     }
     return string;
   }
-  return { append, prepend, size, head, tail, toString };
+  return { append, prepend, size, head, tail, at, toString };
 }
 
 class Node {
