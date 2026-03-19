@@ -78,6 +78,20 @@ function LinkedList() {
     }
   }
 
+  function contains(value) {
+    if (headNode == null) {
+      return false;
+    }
+    let tmp = headNode;
+    while (tmp != null) {
+      if (tmp.value == value) {
+        return true;
+      }
+      tmp = tmp.nextNode;
+    }
+    return false;
+  }
+
   function toString() {
     let tmp = headNode;
     let string = "";
@@ -90,7 +104,7 @@ function LinkedList() {
     }
     return string;
   }
-  return { append, prepend, size, head, tail, at, pop, toString };
+  return { append, prepend, size, head, tail, at, pop, contains, toString };
 }
 
 class Node {
