@@ -68,6 +68,16 @@ function LinkedList() {
     return tmp.value;
   }
 
+  function pop() {
+    if (headNode == null) {
+      return undefined;
+    } else {
+      let pop = headNode.value;
+      headNode = headNode.nextNode;
+      return pop;
+    }
+  }
+
   function toString() {
     let tmp = headNode;
     let string = "";
@@ -80,7 +90,7 @@ function LinkedList() {
     }
     return string;
   }
-  return { append, prepend, size, head, tail, at, toString };
+  return { append, prepend, size, head, tail, at, pop, toString };
 }
 
 class Node {
