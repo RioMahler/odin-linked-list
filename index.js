@@ -20,7 +20,20 @@ function LinkedList() {
       headNode = new Node(value, null);
     }
   }
-  return { append, prepend };
+
+  function toString() {
+    let tmp = headNode;
+    let string = "";
+    if (tmp != null) {
+      while (tmp.nextNode != null) {
+        string += `(${tmp.value}) -> `;
+        tmp = tmp.nextNode;
+      }
+      string += `(${tmp.value}) -> null`;
+    }
+    return string;
+  }
+  return { append, prepend, toString };
 }
 
 class Node {
