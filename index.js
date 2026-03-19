@@ -141,4 +141,4 @@ class Node {
   }
 }
 
-list = LinkedList();
+export const list = LinkedList();
