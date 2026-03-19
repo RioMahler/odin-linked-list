@@ -21,6 +21,21 @@ function LinkedList() {
     }
   }
 
+  function size() {
+    let tmp = headNode;
+    let size = 0;
+    if (headNode == null) {
+      return size;
+    } else if (headNode != null) {
+      size++;
+    }
+    while (tmp.nextNode != null) {
+      size++;
+      tmp = tmp.nextNode;
+    }
+    return size;
+  }
+
   function head() {
     if (headNode == null) {
       return undefined;
@@ -51,7 +66,7 @@ function LinkedList() {
     }
     return string;
   }
-  return { append, prepend, head, tail, toString };
+  return { append, prepend, size, head, tail, toString };
 }
 
 class Node {
